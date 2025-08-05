@@ -1,40 +1,46 @@
-function Body() {
+export default function Contact() {
   return (
-    <div className="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3    bg-white  shadow-lg    transform   duration-200 easy-in-out">
-      <div className="text-center px-14">
-        <h2 className="text-gray-800 text-3xl font-bold">Skills</h2>
-        <ul className="text-gray-400 mt-2 hover:text-blue-500">
-          <li>Email</li>
-          <p className="mt-2 text-gray-500 text-sm">
-            You can reach me at my email:{" "}
-            <a href="mailto:roscoe@example.com">roscoe@example.com</a>
-          </p>
-          <li>GitHub</li>
-          <p className="mt-2 text-gray-500 text-sm">
-            Check out my projects on{" "}
+    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-6 py-12">
+      <div className="w-full max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+          Contact
+        </h2>
+        <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+          <div>
+            <p className="font-semibold">Email:</p>
+            <a
+              href="mailto:roscoe@example.com"
+              className="text-blue-600 hover:underline"
+            >
+              roscoe@example.com
+            </a>
+          </div>
+
+          <div>
+            <p className="font-semibold">GitHub:</p>
             <a
               href="https://github.com/roscoeclark"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
             >
-              GitHub
+              github.com/roscoeclark
             </a>
-          </p>
-          <li>LinkedIn</li>
-          <p className="mt-2 text-gray-500 text-sm">
-            Connect with me on{" "}
+          </div>
+
+          <div>
+            <p className="font-semibold">LinkedIn:</p>
             <a
               href="https://www.linkedin.com/in/roscoeclark"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
             >
-              LinkedIn
+              linkedin.com/in/roscoeclark
             </a>
-          </p>
-        </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Body;

@@ -1,18 +1,23 @@
-function Body() {
+export default function Skills() {
+  const skills = ["HTML", "CSS", "JavaScript", "React", "Next.js"];
+
   return (
-    <div className="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3    bg-white  shadow-lg    transform   duration-200 easy-in-out">
-      <div className="text-center px-14">
-        <h2 className="text-gray-800 text-3xl font-bold">Skills</h2>
-        <ul className="text-gray-400 mt-2 hover:text-blue-500">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Next.js</li>
+    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-6 py-12">
+      <div className="w-full max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+          Skills
+        </h2>
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-6 text-lg font-medium text-gray-700 dark:text-gray-300">
+          {skills.map((skill, index) => (
+            <li
+              key={index}
+              className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition"
+            >
+              {skill}
+            </li>
+          ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Body;

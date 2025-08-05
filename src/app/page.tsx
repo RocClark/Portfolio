@@ -5,14 +5,26 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 import Contact from "./components/contact";
 
-export default function about() {
+export default function Home() {
   return (
-    <div className="h-screen bg-gray-200  dark:bg-gray-800   flex flex-wrap items-center  justify-center  ">
+    <main className="bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white w-full min-h-screen">
       <Header />
-      <Bio />
-      <Projects />
-      <Skills />
-      <Contact />
-    </div>
+
+      <section className="min-h-screen flex items-center justify-center">
+        <Bio />
+      </section>
+
+      <section className="min-h-screen flex items-center justify-center">
+        <Projects />
+      </section>
+
+      <section className="min-h-screen flex items-center justify-center">
+        <Skills />
+      </section>
+
+      <section className="min-h-screen flex items-center justify-center">
+        <Contact />
+      </section>
+    </main>
   );
 }
