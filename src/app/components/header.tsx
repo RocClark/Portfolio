@@ -3,25 +3,23 @@ import { useState } from "react";
 import Link from "next/link";
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle menu open/close
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div className="navbar bg-white shadow">
-      <header className="flex items-center justify-between px-4 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-          MovieTitle
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+          YourName
         </h1>
 
         {/* Hamburger Icon */}
         <div className="lg:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg
-              className="w-6 h-6 text-gray-900"
+              className="w-6 h-6 text-gray-900 dark:text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -37,55 +35,55 @@ function Header() {
           </button>
         </div>
 
-        {/* Links for larger screens */}
-        <div className="hidden lg:flex items-center space-x-8">
+        {/* Nav Links - Desktop */}
+        <nav className="hidden lg:flex space-x-6">
           <Link
-            href="/movieHome"
-            className="text-1xl font-bold tracking-tight text-gray-900"
+            href="#"
+            className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
           >
             Home
           </Link>
           <Link
-            href="/movieHome/signup"
-            className="text-1xl font-bold tracking-tight text-gray-900"
+            href="#"
+            className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
           >
-            SignUp
+            Projects
           </Link>
           <Link
-            href="/movieHome/logIn"
-            className="text-1xl font-bold tracking-tight text-gray-900"
+            href="#"
+            className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
           >
-            Login
+            Contact
           </Link>
-        </div>
+        </nav>
+      </div>
 
-        {/* Menu for smaller screens */}
-        <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } lg:hidden absolute top-16 right-4 bg-white shadow-lg rounded-md w-48`}
-        >
-          <Link
-            href="/movieHome"
-            className="block px-4 py-2 text-gray-900 font-bold"
-          >
-            Home
-          </Link>
-          <Link
-            href="/movieHome/signup"
-            className="block px-4 py-2 text-gray-900 font-bold"
-          >
-            SignUp
-          </Link>
-          <Link
-            href="/movieHome/logIn"
-            className="block px-4 py-2 text-gray-900 font-bold"
-          >
-            Login
-          </Link>
+      {/* Nav Links - Mobile Dropdown */}
+      {menuOpen && (
+        <div className="lg:hidden bg-white dark:bg-gray-900 px-4 py-2 shadow-md">
+          <nav className="flex flex-col space-y-2">
+            <Link
+              href="#"
+              className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
+            >
+              Home
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
+            >
+              Projects
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-900 dark:text-white font-medium hover:text-blue-600"
+            >
+              Contact
+            </Link>
+          </nav>
         </div>
-      </header>
-    </div>
+      )}
+    </header>
   );
 }
 

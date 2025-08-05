@@ -1,23 +1,37 @@
-function Body() {
+import Image from "next/image";
+
+export default function Bio() {
   return (
-    <div className="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3    bg-white  shadow-lg    transform   duration-200 easy-in-out">
-      <div className=" h-32 overflow-hidden"></div>
-      <div className="text-center px-14">
-        <h2 className="text-gray-800 text-3xl font-bold">Roscoe</h2>
-        <a className="text-gray-400 mt-2 hover:text-blue-500" href="#"></a>
-        <p className="mt-2 text-gray-500 text-sm">
-          Hello my name is Roscoe I Have been learning about web development
-          over the course of the last few years and am looking to get into the
-          tech world.I enjoy learning about new technologies and like working
-          with others to expand my knowledge and see things from different
-          points of view. I am based out of Nashua New Hampshire, and am looking
-          to joint a team within the relative area. I like learning new
-          technology . My favorite part of web dev is working on the front end,
-          and have enjoyed learning about bootstrap and tailwind.css.
-        </p>
+    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-6 py-12">
+      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-10">
+        {/* Profile Image */}
+        <div className="flex-shrink-0">
+          <Image
+            src="/avatar.jpg" // Replace with your actual image in public/
+            alt="Roscoe"
+            width={200}
+            height={200}
+            className="rounded-full border-4 border-blue-500 shadow-lg"
+          />
+        </div>
+
+        {/* Bio Text */}
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
+            Roscoe
+          </h2>
+          <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            Hello! I&#39;m Roscoe. I’ve been diving into web development over
+            the past few years, and I&#39;m excited to transition into the tech
+            industry. I enjoy learning new technologies and collaborating with
+            others to expand my skills and perspectives. I&#39;m based in
+            Nashua, New Hampshire, and actively looking to join a local or
+            remote development team. Front-end development is where I feel most
+            at home, and I’ve especially enjoyed working with frameworks like
+            Tailwind CSS and Bootstrap.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Body;
